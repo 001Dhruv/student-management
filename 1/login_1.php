@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body style="background-color:black">
+
+<?php
+    session_start();
+    if(isset($_SESSION['user_id'])){
+
+        header("Location: home.php");
+        exit;
+    }
+    else{
+      ?>
+    
+
+    
+    <div style="width: 63%; margin-left: 20%; margin-top: 15%;color: white;"  >
+    <h1 style="font-size:50px ; font-weight: bolder;">Student Management</h1>
+    <hr>
+    
+    <form style="font:white ;" method="post" action="login.php">
+        <div class="form-group">
+          <label>User Name</label>
+          <input type="text" class="form-control" placeholder="Enter Your User Name" name="user_id">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        </div>
+        <hr>
+        <input type="submit" class="btn btn-outline-success">
+    </form>
+</div>
+</body>
+</html><?php
+
+    }
+?>
